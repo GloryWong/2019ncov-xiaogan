@@ -37,6 +37,7 @@
 
 	header {
 		width: 100%;
+		box-sizing: border-box;
 		background-color: $clr;
 		padding: 0.8em;
 		border-top: 10px solid darken($clr, 20%);
@@ -81,6 +82,7 @@
 
 	footer {
 		width: 100%;
+		box-sizing: border-box;
 		padding: 0.8em;
 		font-size: 0.8em;
 		background: rgba(0, 0, 0, 0.8);
