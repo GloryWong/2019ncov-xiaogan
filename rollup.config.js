@@ -13,7 +13,7 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'public/build/bundle.js'
+		file: 'xgncovpublic/build/bundle.js'
 	},
 	plugins: [
 		svelte({
@@ -22,7 +22,7 @@ export default {
 			// we'll extract any component CSS out into
 			// a separate file - better for performance
 			css: css => {
-				css.write('public/build/bundle.css');
+				css.write('xgncovpublic/build/bundle.css');
 			},
 			preprocess: autoPreprocess()
 		}),
@@ -42,9 +42,9 @@ export default {
 		// the bundle has been generated
 		!production && serve(),
 
-		// Watch the `public` directory and refresh the
+		// Watch the `xgncovpublic` directory and refresh the
 		// browser on changes when not in production
-		!production && livereload('public'),
+		!production && livereload('xgncovpublic'),
 
 		// If we're building for production (npm run build
 		// instead of npm run dev), minify
