@@ -54,7 +54,7 @@
 			&-cityname {
 				.logo {
 					display: inline-block;
-					background: url('/public/favicon.png');
+					background: url('/2019ncov-xiaogan/public/favicon.png');
 					width: 1.5em;
 					height: 1.5em;
 					background-size: contain;
