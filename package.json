@@ -8,7 +8,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run build"
+      "pre-commit": "npm run build",
+      "post-commit": "replace-in-files --string='/2019ncov-xiaogan/public/' --replacement='/public/' index.html"
     }
   },
   "devDependencies": {
