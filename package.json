@@ -6,9 +6,15 @@
     "dev": "rollup -c -w",
     "start": "sirv ."
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "node replace-index.js"
+    }
+  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
     "@rollup/plugin-node-resolve": "^7.0.0",
+    "husky": "^4.2.1",
     "node-sass": "^4.13.1",
     "replace-in-file": "^5.0.2",
     "rollup": "^1.20.0",
