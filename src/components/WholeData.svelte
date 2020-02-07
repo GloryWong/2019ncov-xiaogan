@@ -1,5 +1,5 @@
 <main>
-  <iframe title="丁香医生" src="https://ncov.dxy.cn/ncovh5/view/pneumonia"></iframe>
+  <iframe title="丁香医生" frameborder="0" src="https://ncov.dxy.cn/ncovh5/view/pneumonia"></iframe>
 </main>
 
 <style lang="scss">
