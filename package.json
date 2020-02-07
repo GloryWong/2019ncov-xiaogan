@@ -2,13 +2,13 @@
   "name": "svelte-app",
   "version": "1.0.0",
   "scripts": {
-    "build": "rollup -c",
+    "build": "replace-in-files --string='/public/' --replacement='/2019ncov-xiaogan/public/' index.html && rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv ."
   },
   "husky": {
     "hooks": {
-      "pre-commit": "replace-in-files --string='/public/' --replacement='/2019ncov-xiaogans/public/' index.html"
+      "pre-commit": "npm run build"
     }
   },
   "devDependencies": {
