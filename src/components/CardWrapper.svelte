@@ -25,17 +25,23 @@
 
     &__header {
       &-title {
-        font-size: 25px; 
+        font-size: 1.3em; 
       }
       &-des {
         margin-top: 10px;
-        font-size: 15px;
+        font-size: 0.9em;
         color: #999;
       }
     }
 
     &__article {
       margin-top: 20px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .card {
+      padding: 20px 17px;
     }
   }
 </style>

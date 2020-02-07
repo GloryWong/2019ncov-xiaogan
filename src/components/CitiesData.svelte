@@ -1,67 +1,77 @@
 <script>
-  const titles = ['地区', '确诊', '治愈', '死亡'];
+  import table from './citiesdata.js';
+  const { titles, data, uptoTime, traceCount, observeCount } = table;
 
-  const data = [{
-    id: 'xn',
-    label: '孝南',
-    incCount: {
-      confirmed: 60,
-      cured: 5,
-      dead: 0
-    },
-    sumCount: {
-      confirmed: 543,
-      cured: 11,
-      dead: 5
+  // sort by confirmed count
+  data.sort(({ sumCount: asc }, { sumCount: bsc }) => asc.confirmed > bsc.confirmed ? -1 : 1);
+
+  // append all count
+  const allCount = data.reduce((p, c) => {
+    for(let k in p) {
+      if (k === 'label') {
+        continue;
+      }
+      const pval = p[k];
+      const cval = c[k];
+
+      p[k] = {
+        confirmed: (pval.confirmed || 0) + cval.confirmed,
+        cured: (pval.cured || 0) + cval.cured,
+        dead: (pval.dead || 0) + cval.dead
+      };
     }
+
+    return p;
   }, {
-    id: 'hc',
-    label: '汉川',
-    incCount: {
-      confirmed: 81,
-      cured: 2,
-      dead: 0
-    },
-    sumCount: {
-      confirmed: 530,
-      cured: 4,
-      dead: 12
-    }
-  }, {
-    id: 'yc',
-    label: '应城',
-    incCount: {
-      confirmed: 3,
-      cured: 0,
-      dead: 0
-    },
-    sumCount: {
-      confirmed: 210,
-      cured: 0,
-      dead: 0
-    }
-  }]
+    label: '全市累计',
+    incCount: {},
+    sumCount: {}
+  });
+
+  data.push(allCount);
 </script>
 
 <main>
+  <header>截至{uptoTime}</header>
   <div class="table">
     {#each titles as title}
     <div class="item item-title">{title}</div>
     {/each}
     {#each data as { id, label, incCount, sumCount }}
     <div class="item item-label">{label}</div>
-    <div class="item item-count"><span class="clr-confirmed">{sumCount.confirmed}</span><div class="item-count__inc">昨日增加<span class="clr-confirmed">{incCount.confirmed}</span></div></div>
-    <div class="item item-count"><span class="clr-cured">{sumCount.cured}</span><div class="item-count__inc">昨日增加<span class="clr-cured">{incCount.cured}</span></div></div>
-    <div class="item item-count"><span class="clr-dead">{sumCount.dead}</span><div class="item-count__inc">昨日增加<span class="clr-dead">{incCount.dead}</span></div></div>
+    <div class="item item-count"><span class="clr-confirmed">{sumCount.confirmed}</span><div class="item-count__inc">较昨日增加<span class="clr-confirmed">{incCount.confirmed}</span></div></div>
+    <div class="item item-count"><span class="clr-cured">{sumCount.cured}</span><div class="item-count__inc">较昨日增加<span class="clr-cured">{incCount.cured}</span></div></div>
+    <div class="item item-count"><span class="clr-dead">{sumCount.dead}</span><div class="item-count__inc">较昨日增加<span class="clr-dead">{incCount.dead}</span></div></div>
     {/each}
   </div>
+  <footer>
+    <div>注：</div>
+    <div>1. 累计追踪密切接触者{traceCount}人，尚在接受医学观察{observeCount}人。</div>
+    <div>2. 数据来源于孝感市卫生健康委员会。</div>
+  </footer>
 </main>
 
 <style lang="scss">
+  header, footer {
+    color: #777;
+  }
+
+  header {
+    text-align: center;
+  }
+
+  footer {
+    font-size: 0.7em;
+    & > div {
+      margin-bottom: 5px;
+    }
+  }
+
   .table {
     display: grid;
     width: 100%;
-    grid-template-columns: 2fr repeat(3, 1fr);
+    margin: 10px 0;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     place-items: stretch;
     $borderClr: rgba(0, 0, 0, 0.12);
