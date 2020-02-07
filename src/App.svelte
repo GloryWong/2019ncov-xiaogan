@@ -3,6 +3,7 @@
 	import CitiesData from './components/CitiesData.svelte';
 	import Notifications from './components/Notifications.svelte';
 	import WholeData from './components/WholeData.svelte';
+	import Buoy from './components/Buoy.svelte';
 </script>
 
 <main>
@@ -30,6 +31,7 @@
 			Powered by <a href="https://svelte.dev/" target="_blank">Svelte</a>. Host in <a href="https://github.com/GloryWong/2019ncov-xiaogan" target="_blank">Github</a>.
 		</div>
 	</footer>
+	<Buoy />
 </main>
 
 <style lang="scss">
