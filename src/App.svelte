@@ -1,6 +1,8 @@
 <script>
 	import CardWrapper from './components/CardWrapper.svelte';
 	import CitiesData from './components/CitiesData.svelte';
+	import Notifications from './components/Notifications.svelte';
+	import WholeData from './components/WholeData.svelte';
 </script>
 
 <main>
@@ -10,9 +12,16 @@
 	</header>
 	<article>
 		<CardWrapper
-		title='孝感市最新疫情'
+		title='孝感市最新疫情数据统计'
 		des='孝感市辖管的区、县、县级市的最新新型冠状病毒引起的肺炎确认人数统计'>
-			<CitiesData/>
+			<CitiesData />
+		</CardWrapper>
+		<CardWrapper
+		title='孝感市疫情重点通知' des='孝感市政府或辖管的区、县、县级市对于疫情的重点通知'>
+			<Notifications />
+		</CardWrapper>
+		<CardWrapper title='全国最新疫情数据统计' des='数据来自丁香园·丁香医生'>
+			<WholeData />
 		</CardWrapper>
 	</article>
 	<footer>
