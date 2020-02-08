@@ -39,9 +39,9 @@
     {/each}
     {#each data as { id, label, incCount, sumCount }}
     <div class="item item-label">{label}</div>
-    <div class="item item-count"><span class="clr-confirmed">{sumCount.confirmed}</span><div class="item-count__inc">较昨日增加<span class="clr-confirmed">{incCount.confirmed}</span></div></div>
-    <div class="item item-count"><span class="clr-cured">{sumCount.cured}</span><div class="item-count__inc">较昨日增加<span class="clr-cured">{incCount.cured}</span></div></div>
-    <div class="item item-count"><span class="clr-dead">{sumCount.dead}</span><div class="item-count__inc">较昨日增加<span class="clr-dead">{incCount.dead}</span></div></div>
+    <div class="item item-count"><span class="clr-confirmed">{sumCount.confirmed}</span><div class="item-count__inc">较昨日增加 <span class="clr-confirmed">{incCount.confirmed}</span></div></div>
+    <div class="item item-count"><span class="clr-cured">{sumCount.cured}</span><div class="item-count__inc">较昨日增加 <span class="clr-cured">{incCount.cured}</span></div></div>
+    <div class="item item-count"><span class="clr-dead">{sumCount.dead}</span><div class="item-count__inc">较昨日增加 <span class="clr-dead">{incCount.dead}</span></div></div>
     {/each}
   </div>
   <footer>
