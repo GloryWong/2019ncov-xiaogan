@@ -1,34 +1,13 @@
 <script>
-  import table from './citiesdata.js';
-  const { titles, data, uptoTime, traceCount, observeCount } = table;
+  import table from '../data/table.data.js';
+  import citiesdata from '../data/citiesdata.js';
+  import { sortBy, appendAllCount } from '../lib/tableGen.js';
+  import cloneDeep from 'lodash.clonedeep';
+  const { titles, uptoTime, traceCount, observeCount } = table;
 
-  // sort by confirmed count
-  data.sort(({ sumCount: asc }, { sumCount: bsc }) => asc.confirmed > bsc.confirmed ? -1 : 1);
-
-  // append all count
-  const allCount = data.reduce((p, c) => {
-    for(let k in p) {
-      if (k === 'label') {
-        continue;
-      }
-      const pval = p[k];
-      const cval = c[k];
-
-      p[k] = {
-        confirmed: (pval.confirmed || 0) + cval.confirmed,
-        cured: (pval.cured || 0) + cval.cured,
-        dead: (pval.dead || 0) + cval.dead
-      };
-    }
-
-    return p;
-  }, {
-    label: '全市累计',
-    incCount: {},
-    sumCount: {}
-  });
-
-  data.push(allCount);
+  const latestData = cloneDeep(citiesdata[citiesdata.length - 1].data);
+  sortBy(latestData);
+  appendAllCount(latestData);
 </script>
 
 <main>
@@ -37,7 +16,7 @@
     {#each titles as title}
     <div class="item item-title">{title}</div>
     {/each}
-    {#each data as { id, label, incCount, sumCount }}
+    {#each latestData as { id, label, incCount, sumCount }}
     <div class="item item-label">{label}</div>
     <div class="item item-count"><span class="clr-confirmed">{sumCount.confirmed}</span><div class="item-count__inc">较昨日增加 <span class="clr-confirmed">{incCount.confirmed}</span></div></div>
     <div class="item item-count"><span class="clr-cured">{sumCount.cured}</span><div class="item-count__inc">较昨日增加 <span class="clr-cured">{incCount.cured}</span></div></div>

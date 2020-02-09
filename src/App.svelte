@@ -1,9 +1,10 @@
 <script>
 	import CardWrapper from './components/CardWrapper.svelte';
-	import CitiesData from './components/CitiesData.svelte';
+	import Table from './components/Table.svelte';
 	import Notifications from './components/Notifications.svelte';
 	import WholeData from './components/WholeData.svelte';
 	import Buoy from './components/Buoy.svelte';
+	import Trend from './components/Trend.svelte';
 </script>
 
 <main>
@@ -12,14 +13,16 @@
 		<h1 class="title title-des">新型冠状病毒（2019-nCoV）疫情动态</h1>
 	</header>
 	<article>
+		<CardWrapper title='孝感市疫情重点通知' des='孝感市政府或辖管的区、县、县级市对于疫情的重点通知'>
+			<Notifications />
+		</CardWrapper>
+		<CardWrapper title='孝感市疫情走势' des='孝感市辖管的区、县、县级市的新型冠状病毒引起的肺炎疫情走势'>
+			<Trend />
+		</CardWrapper>
 		<CardWrapper
 		title='孝感市最新疫情数据统计'
 		des='孝感市辖管的区、县、县级市的最新新型冠状病毒引起的肺炎确认人数统计'>
-			<CitiesData />
-		</CardWrapper>
-		<CardWrapper
-		title='孝感市疫情重点通知' des='孝感市政府或辖管的区、县、县级市对于疫情的重点通知'>
-			<Notifications />
+			<Table />
 		</CardWrapper>
 		<CardWrapper title='全国最新疫情数据统计' des='数据来自丁香园·丁香医生'>
 			<WholeData />
@@ -28,7 +31,7 @@
 	<footer>
 		<div>
 			<a href="https://zhaozhao.today/" target="_blank">昭昭</a> @ 2020. 
-			Powered by <a href="https://svelte.dev/" target="_blank">Svelte</a>. Host in <a href="https://github.com/GloryWong/2019ncov-xiaogan" target="_blank">Github</a>.
+			Powered by <a href="https://svelte.dev/" target="_blank">Svelte</a>. Host on <a href="https://github.com/GloryWong/2019ncov-xiaogan" target="_blank">Github</a>.
 		</div>
 	</footer>
 	<Buoy />

@@ -1,3 +1,10 @@
 <main>
-  开发中，尽情期待...
+  <div>暂无数据</div>
 </main>
+
+<style lang="scss">
+  div {
+    color: #ccc;
+    text-align: center;
+  }
+</style>
