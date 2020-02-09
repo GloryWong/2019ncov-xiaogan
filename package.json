@@ -1,6 +1,6 @@
 {
   "name": "svelte-app",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "scripts": {
     "build": "replace-in-files --string='/public/' --replacement='/2019ncov-xiaogan/public/' index.html && git add index.html && rollup -c",
     "dev": "rollup -c -w",
