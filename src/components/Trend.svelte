@@ -37,7 +37,7 @@
             format: {
               suffix: '人'
             },
-            title: '人数',
+            title: '',
             series: 'City'
           }
         ]
