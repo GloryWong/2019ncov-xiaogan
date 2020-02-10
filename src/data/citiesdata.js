@@ -1042,4 +1042,91 @@ export default [{
       dead: 0
     }
   }]
-}];
+  }, {
+    date: '2020-02-09',
+    data: [{
+      label: '孝南区',
+      incCount: {
+        confirmed: 25,
+        cured: 12,
+        dead: 0
+      },
+      sumCount: {
+        confirmed: 630,
+        cured: 38,
+        dead: 5
+      }
+    }, {
+      label: '汉川市',
+      incCount: {
+        confirmed: 14,
+        cured: 3,
+        dead: 0
+      },
+      sumCount: {
+        confirmed: 590,
+        cured: 7,
+        dead: 13
+      }
+    }, {
+      label: '应城市',
+      incCount: {
+        confirmed: 6,
+        cured: 3,
+        dead: 1
+      },
+      sumCount: {
+        confirmed: 256,
+        cured: 8,
+        dead: 1
+      }
+    }, {
+      label: '云梦县',
+      incCount: {
+        confirmed: 34,
+        cured: 4,
+        dead: 0
+      },
+      sumCount: {
+        confirmed: 277,
+        cured: 12,
+        dead: 4
+      }
+    }, {
+      label: '安陆市',
+      incCount: {
+        confirmed: 10,
+        cured: 9,
+        dead: 2
+      },
+      sumCount: {
+        confirmed: 399,
+        cured: 10,
+        dead: 6
+      }
+    }, {
+      label: '大悟县',
+      incCount: {
+        confirmed: 4,
+        cured: 5,
+        dead: 1
+      },
+      sumCount: {
+        confirmed: 206,
+        cured: 6,
+        dead: 4
+      }
+    }, {
+      label: '孝昌县',
+      incCount: {
+        confirmed: 12,
+        cured: 0,
+        dead: 0
+      },
+      sumCount: {
+        confirmed: 183,
+        cured: 0,
+        dead: 0
+      }
+    }]
+  }];
