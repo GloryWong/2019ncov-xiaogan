@@ -31,7 +31,7 @@
 	<footer>
 		<div>
 			<a href="https://zhaozhao.today/" target="_blank">昭昭</a> @ 2020. 
-			Powered by <a href="https://svelte.dev/" target="_blank">Svelte</a>. Host on <a href="https://github.com/GloryWong/2019ncov-xiaogan" target="_blank">Github</a>.
+			Powered by <a href="https://svelte.dev/" target="_blank">Svelte</a>. Host on Netlify.
 		</div>
 	</footer>
 	<Buoy />
